@@ -22,7 +22,7 @@ $book = new Book();
     ?>
 
     <div class="w-11/12 mx-auto">
-      <h1>Library</h1>
+      <h1 class="text-center text-3xl mb-6">Library</h1>
     </div>
   </div>  
 </body>

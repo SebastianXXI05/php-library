@@ -34,19 +34,20 @@ if ($_POST) {
       <div class="flex justify-center">
         <form action="#" method="post">
           <label for="name">Name</label>
-          <div>
+          <div class="my-2">
             <input class="bg-zinc-600 focus-visible:outline-none rounded" 
             type="text" name="name">
           </div>
 
-          <label for="link_image">Image url</label>
-          <div>
+          <label 
+          for="link_image">Image url</label>
+          <div class="my-2">
             <input class="bg-zinc-600 focus-visible:outline-none rounded" 
             type="text" name="link_image">
           </div>
 
           <label for="description">Description</label>
-          <div>
+          <div class="my-2">
             <textarea 
             class="bg-zinc-600 focus-visible:outline-none rounded" 
             name="description" 
@@ -54,7 +55,12 @@ if ($_POST) {
           </textarea>
           </div>
 
-          <button type="submit">Add book</button>
+          <div class="flex justify-center">
+            <button
+              class="bg-sky-600 py-1 px-2 rounded hover:bg-sky-700" 
+              type="submit">Add book
+            </button>
+          </div>
         </form>
       </div>
     </div>
