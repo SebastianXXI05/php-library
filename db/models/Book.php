@@ -27,7 +27,10 @@ class Book extends Db implements Models {
   }
 
   public function get_all() {
-    
+    $connection = $this->connect();
+    $result = mysqli_query($connection, "SELECT * FROM book;");
+
+    return $result;
   }
 
   public function update() {
