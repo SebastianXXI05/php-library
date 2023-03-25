@@ -1,12 +1,12 @@
 <?php
-/* require_once('./db/models/Book.php');
+require_once('../db/models/Book.php');
 
 if ($_POST) {
   $book = new Book();
 
   $book->insert($_POST['name'], $_POST['description'], $_POST['link_image']);
-  $book->redirect('./');
-} */
+  $book->redirect('../');
+} 
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +51,12 @@ if ($_POST) {
             <textarea 
             class="bg-zinc-600 focus-visible:outline-none rounded" 
             name="description" 
-            cols="23" rows="10">
-          </textarea>
+            cols="30" rows="10"></textarea>
+          
+          <!-- <textarea 
+          name="" 
+          cols="24" 
+          rows="10"></textarea> -->
           </div>
 
           <div class="flex justify-center">
