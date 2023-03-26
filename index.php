@@ -24,21 +24,27 @@ $book = new Book();
     ?>
 
     <div class="w-11/12 mx-auto">
-      <h1 class="text-center text-3xl mb-6">Library</h1>
+      <h1 class="text-center text-3xl mb-12">Library</h1>
       <?php
       require_once('./db/models/Book.php');
       $book = new Book();
       $books = $book->get_all();
       ?>
 
-      <?php if (mysqli_num_rows($books) !== 0) : ?>
-        <?php foreach ($books as $book) : ?>
-          <h3><?= $book['name'] ?></h3>
-        <?php endforeach; ?>
+      <section class="flex justify-center">
+        <?php if (mysqli_num_rows($books) !== 0) : ?>
+          <?php foreach ($books as $book) : ?>
+            <article
+            class="bg-zinc-700 p-2 mb-4 rounded mx-2"
+            >
+              <h3><a class="font-bold hover:text-sky-600"  href=""><?= $book['name'] ?></a></h3>
+            </article>
+          <?php endforeach; ?>
 
-      <?php else: ?>
-        <h2>Not Found Books</h2>
-      <?php endif; ?>
+        <?php else : ?>
+          <h2>Not Found Books</h2>
+        <?php endif; ?>
+      </section>
     </div>
 
   </div>

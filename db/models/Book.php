@@ -20,6 +20,10 @@ class Book extends Db implements Models {
     [$name, $description, $link_image] = $data;
     $connection = $this->connect();
 
+    $name = mysqli_real_escape_string($connection, $name);
+    $description = mysqli_real_escape_string($connection, $description);
+    $link_image = mysqli_real_escape_string($connection, $link_image);
+
     mysqli_query($connection, "
       INSERT INTO book (name, description, link_image) VALUES 
       ('$name', '$description', '$link_image');

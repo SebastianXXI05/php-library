@@ -3,7 +3,7 @@ require_once('../db/models/Book.php');
 
 if ($_POST) {
   $book = new Book();
-
+  // echo $_POST['description'];
   $book->insert($_POST['name'], $_POST['description'], $_POST['link_image']);
   $book->redirect('../');
 } 
