@@ -37,7 +37,14 @@ $book = new Book();
             <article
             class="bg-zinc-700 p-2 mb-4 rounded mx-2"
             >
-              <h3><a class="font-bold hover:text-sky-600"  href=""><?= $book['name'] ?></a></h3>
+              <h3>
+                <a 
+                class="font-bold hover:text-sky-600"  
+                href=<?= "./views/show_book.php?id=$book[uuid]" ?>
+                >
+                <?= $book['name'] ?>
+              </a>
+              </h3>
             </article>
           <?php endforeach; ?>
 

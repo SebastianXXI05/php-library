@@ -40,6 +40,16 @@ class Book extends Db implements Models {
     return $result;
   }
 
+  public function get($uuid) {
+    $result = mysqli_query($this->connection, "
+      SELECT uuid, name, description, link_image FROM book
+        WHERE uuid = '$uuid';
+    ");
+    // mysqli_fetch_row()
+
+    return $result;
+  }
+
   public function update() {
     
   }
