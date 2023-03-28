@@ -39,10 +39,22 @@ $book = new Book();
             >
               <h3>
                 <a 
-                class="font-bold hover:text-sky-600"  
+                class="font-bold hover:text-sky-600 mr-4"  
                 href=<?= "./views/show_book.php?id=$book[uuid]" ?>
                 >
                 <?= $book['name'] ?>
+              </a>
+              <a 
+                class="bg-green-500 rounded px-3 py-1 mr-3 hover:bg-green-600"
+                href=""
+              >
+                Edit
+              </a>
+              <a 
+                class="bg-red-500 rounded px-3 py-1 mr-3 hover:bg-red-600""
+                href=""
+              >
+                Delete
               </a>
               </h3>
             </article>
