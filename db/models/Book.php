@@ -66,7 +66,9 @@ class Book extends Db implements Models {
     ");
   }
 
-  public function remove() {
-    
+  public function delete($uuid) {
+    mysqli_query($this->connection, "
+      DELETE FROM book WHERE uuid = '$uuid';  
+    ");
   }
 }

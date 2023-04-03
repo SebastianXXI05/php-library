@@ -60,7 +60,7 @@ $book = new Book();
               <!--delete-->
               <a 
                 class="bg-red-500 rounded px-3 py-1 mr-3 hover:bg-red-600"
-                href=""
+                href=<?= "./views/delete_book.php?uuid=$book[uuid]" ?>
               >
                 Delete
               </a>
