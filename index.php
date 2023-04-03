@@ -34,6 +34,12 @@ $book = new Book();
       <section class="flex justify-center">
         <?php if (mysqli_num_rows($books) !== 0) : ?>
           <?php foreach ($books as $book) : ?>
+            <?php 
+            // format text and update URL.
+            $url = "./views/update_book.php?id=$book[uuid]&name=$book[name]&description=$book[description]&link_image=$book[link_image]";
+             
+            $update_url = str_replace(' ', '-', $url);
+            ?>
             <article
             class="bg-zinc-700 p-2 mb-4 rounded mx-2"
             >
@@ -44,14 +50,16 @@ $book = new Book();
                 >
                 <?= $book['name'] ?>
               </a>
+              <!--update-->
               <a 
                 class="bg-green-500 rounded px-3 py-1 mr-3 hover:bg-green-600"
-                href=""
+                href=<?= $update_url ?>
               >
-                Edit
+                update
               </a>
+              <!--delete-->
               <a 
-                class="bg-red-500 rounded px-3 py-1 mr-3 hover:bg-red-600""
+                class="bg-red-500 rounded px-3 py-1 mr-3 hover:bg-red-600"
                 href=""
               >
                 Delete

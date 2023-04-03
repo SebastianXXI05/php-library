@@ -50,8 +50,20 @@ class Book extends Db implements Models {
     return $result;
   }
 
-  public function update() {
-    
+  public function update(...$data) {
+    [$uuid, $name, $description, $link_image] = $data;
+
+    $name = mysqli_real_escape_string($this->connection, $name);
+    $description = mysqli_real_escape_string($this->connection, $description);
+    $link_image = mysqli_real_escape_string($this->connection, $link_image);
+
+    mysqli_query($this->connection, "
+      UPDATE book SET
+        name = '$name',
+        description = '$description',
+        link_image = '$link_image'
+      WHERE uuid = '$uuid';
+    ");
   }
 
   public function remove() {
