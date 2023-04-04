@@ -2,6 +2,10 @@
 require_once('./db/models/Book.php');
 
 $book = new Book();
+
+// performance session
+session_start();
+$_SESSION['joined'] = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">

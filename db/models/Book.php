@@ -9,6 +9,8 @@ class Book extends Db implements Models {
   public function __construct() {
     $this->connection = $this->connect();
 
+  // queries not run 
+  if ($_SESSION['joined']) {
     mysqli_query($this->connection, "
       CREATE TABLE IF NOT EXISTS book (
         id INT NOT NULL AUTO_INCREMENT ,
@@ -20,6 +22,7 @@ class Book extends Db implements Models {
       );
     ");
   }
+}
 
   public function insert(...$data) {
     [$name, $description, $link_image] = $data;
