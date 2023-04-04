@@ -13,4 +13,8 @@ class Db {
   public function redirect($url) {
     header('location:'.$url);
   }
+
+  protected function migrate($table, $fn) {
+    $fn($table);
+  }
 }
